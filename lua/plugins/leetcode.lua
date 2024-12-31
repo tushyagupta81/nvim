@@ -1,8 +1,8 @@
+local leet_arg = "leetcode.nvim"
 return {
 	"kawre/leetcode.nvim",
 	build = ":TSUpdate html",
-  enabled = false,
-	lazy = true,
+	lazy = leet_arg ~= vim.fn.argv(0, -1),
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 		"nvim-lua/plenary.nvim", -- required by telescope
@@ -15,6 +15,7 @@ return {
 	},
 	opts = {
 		-- configuration goes here
+    arg = leet_arg,
 		keys = {
 			toggle = { "q" }, ---@type string|string[]
 			confirm = { "<CR>" }, ---@type string|string[]
