@@ -5,6 +5,7 @@ return {
 		"BufNewFile",
 	},
 	config = function()
+		---@diagnostic disable-next-line: missing-fields
 		require("trouble").setup({
 			auto_close = true, -- auto close when there are no items
 			auto_open = false, -- auto open when there are items
