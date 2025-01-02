@@ -16,15 +16,20 @@ return {
 		"saghen/blink.cmp",
 		lazy = false, -- lazy loading handled internally
 		dependencies = {
-			"rafamadriz/friendly-snippets",
 			{
 				"L3MON4D3/LuaSnip",
-				version = "v2.*",
-				config = function()
-					---@diagnostic disable-next-line: assign-type-mismatch
-					require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/snippets" })
-					require("luasnip.loaders.from_vscode").lazy_load()
-				end,
+				lazy = true,
+				dependencies = {
+					{
+						"rafamadriz/friendly-snippets",
+						config = function()
+							require("luasnip.loaders.from_vscode").lazy_load()
+							require("luasnip.loaders.from_lua").lazy_load({
+								paths = { vim.fn.stdpath("config") .. "/snippets" },
+							})
+						end,
+					},
+				},
 			},
 		},
 		version = "v0.*",
@@ -34,7 +39,7 @@ return {
 			keymap = { preset = "default" },
 
 			appearance = {
-				nerd_font_variant = "mono",
+				nerd_font_variant = "normal",
 			},
 
 			sources = {
@@ -131,28 +136,19 @@ return {
 						---@diagnostic disable-next-line: assign-type-mismatch
 						treesitter = { "lsp" },
 						columns = {
-							{ "kind_icon", "sperator", gap = 1 },
+							{ "kind_icon" },
 							{ "label", "label_description", gap = 1 },
 							{ "kind" },
 						},
-						components = {
-							sperator = {
-								ellipsis = false,
-								width = { fill = true },
-								text = function()
-									return "┃"
-								end,
-							},
-						},
 					},
-					border = "rounded",
+					border = "single",
 					scrollbar = false,
 				},
 				documentation = {
 					auto_show = true,
 					auto_show_delay_ms = 200,
 					window = {
-						border = "rounded",
+						border = "single",
 						winblend = 0,
 						max_width = 100,
 					},
@@ -166,13 +162,13 @@ return {
 			signature = {
 				enabled = true,
 				window = {
-					border = "rounded",
+					border = "single",
 				},
 			},
 		},
 		-- allows extending the providers array elsewhere in your config
 		-- without having to redefine it
-		-- opts_extend = { "sources.default" },
-		opts_extend = { "sources.completion.enabled_providers" },
+		opts_extend = { "sources.default" },
+		-- opts_extend = { "sources.completion.enabled_providers" },
 	},
 }

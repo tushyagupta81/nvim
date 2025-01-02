@@ -13,6 +13,7 @@ end
 return {
 	{
 		"folke/tokyonight.nvim",
+    enabled = false,
 		lazy = false,
 		priority = 1000,
 		opts = {
@@ -26,6 +27,7 @@ return {
 	{
 		"catppuccin/nvim",
 		name = "catppuccin",
+    enabled = false,
 		priority = 1000,
 		config = function()
 			require("catppuccin").setup({
@@ -54,6 +56,7 @@ return {
 	},
 	{
 		"diegoulloao/neofusion.nvim",
+    enabled = false,
 		name = "neofusion",
 		priority = 1000,
 		config = function()

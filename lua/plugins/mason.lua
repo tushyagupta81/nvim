@@ -7,7 +7,7 @@ return {
 			require("mason").setup({
 				-- PATH = "append",
 				ui = {
-					border = "rounded",
+					border = "single",
 					icons = {
 						package_installed = "✓",
 						package_pending = "➜",
@@ -47,14 +47,13 @@ return {
 					"clang-format", -- cpp & c formatter
 					"marksman", -- markdown lsp
 					"markdownlint-cli2", -- markdown linter
-					-- "rustfmt", -- rust
 				},
 			})
 		end,
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-		event = "VeryLazy",
+    lazy = true,
 		dependencies = {
 			"williamboman/mason.nvim",
 			"mfussenegger/nvim-dap",

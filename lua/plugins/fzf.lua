@@ -1,8 +1,8 @@
--- chown the dir for startserver for fzf-lua in wsl if it dosent work !!
+-- having systemd on wsl on will cause error
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "echasnovski/mini.icons" },
-	event = "VimEnter",
+  lazy = true,
 	opts = function()
 		local config = require("fzf-lua.config")
 		local actions = require("fzf-lua.actions")

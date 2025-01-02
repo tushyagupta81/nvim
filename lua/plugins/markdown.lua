@@ -1,7 +1,7 @@
 return {
 	"MeanderingProgrammer/render-markdown.nvim",
   ft = { "md" },
-	event = "VeryLazy",
+  lazy = true,
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		"echasnovski/mini.nvim",

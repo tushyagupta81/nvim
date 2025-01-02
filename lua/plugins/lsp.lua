@@ -10,7 +10,13 @@ return {
 		local lspconfig = require("lspconfig")
 
 		local capabilities = require("blink.cmp").get_lsp_capabilities()
-		require("fidget").setup({})
+		require("fidget").setup({
+			notification = {
+				window = {
+					winblend = 0, -- Background color opacity in the notification window
+				},
+			},
+		})
 		---@diagnostic disable-next-line: missing-fields
 		require("mason-lspconfig").setup({
 			handlers = {
