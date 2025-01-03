@@ -1,8 +1,10 @@
 return {
 	"kristijanhusak/vim-dadbod-ui",
-	"tpope/vim-dadbod",
-	"kristijanhusak/vim-dadbod-completion",
-  enabled = false,
+	dependencies = {
+		"tpope/vim-dadbod",
+		"kristijanhusak/vim-dadbod-completion",
+	},
+	enabled = false,
 	lazy = true,
 	init = function()
 		-- Your DBUI configuration
