@@ -5,6 +5,7 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
+		ft = { "js", "ts", "jsx", "tsx" },
 		name = "tailwind-tools",
 		build = ":UpdateRemotePlugins",
 		dependencies = {
