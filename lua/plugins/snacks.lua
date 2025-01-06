@@ -12,9 +12,12 @@ return {
 			end,
 		})
 		return {
-			-- your configuration comes here
-			-- or leave it empty to use the default settings
-			-- refer to the configuration section below
+			---@type snacks.animate.Duration|number
+			animate = {
+				duration = 20, -- ms per step
+				easing = "linear",
+				fps = 60, -- frames per second. Global setting for all animations
+			},
 			dashboard = {
 				width = 68,
 				preset = {
@@ -114,20 +117,26 @@ return {
 			indent = {
 				enabled = true,
 				animate = {
-					enabled = false,
+					enabled = vim.fn.has("nvim-0.10") == 1,
+					style = "out",
+					easing = "linear",
+					duration = {
+						step = 20, -- ms per step
+						total = 500, -- maximum duration
+					},
 				},
-				-- scope = {
-				-- 	char = "┃",
-				-- },
 			},
-      zen = {
-        toggles = {
-          dim = false,
-        },
-        show = {
-          statusline = true,
-        },
-      },
+			input = {
+				enabled = true,
+			},
+			zen = {
+				toggles = {
+					dim = false,
+				},
+				show = {
+					statusline = true,
+				},
+			},
 		}
 	end,
 	keys = function()
