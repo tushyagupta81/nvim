@@ -97,6 +97,15 @@ return {
 			end
 		end
 
+
+		local snacks = require("snacks")
+		vim.api.nvim_create_autocmd("User", {
+			pattern = "MiniFilesActionRename",
+			callback = function(event)
+				snacks.rename.on_rename_file(event.data.from, event.data.to)
+			end,
+		})
+
 		vim.keymap.set("n", "-", minifiles_toggle)
 	end,
 }
