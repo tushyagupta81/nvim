@@ -31,7 +31,7 @@ return {
 					"ts_ls", -- typescript
 					"emmet_language_server", -- emmet
 					"emmet_ls", -- emmet
-					"eslint", -- javascript
+					-- "eslint", -- javascript
 					"basedpyright", -- python
 					"bashls", -- bash
 					"tailwindcss", -- tailwind
@@ -43,7 +43,7 @@ return {
 					"stylua", -- lua formatter
 					"ruff", -- python linter & formatter
 					"biome", -- js & ts formatter
-					"eslint_d", -- js formatter
+					-- "eslint_d", -- js formatter
 					"clang-format", -- cpp & c formatter
 					"marksman", -- markdown lsp
 					"markdownlint-cli2", -- markdown linter
