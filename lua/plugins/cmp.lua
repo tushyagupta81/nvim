@@ -18,6 +18,18 @@ return {
 		dependencies = {
 			"rafamadriz/friendly-snippets",
 			{
+				"Exafunction/codeium.nvim",
+        build = ":Codeium Auth",
+				config = function()
+					require("codeium").setup({
+						virtual_text = {
+							enabled = false,
+						},
+					})
+				end,
+			},
+			"saghen/blink.compat",
+			{
 				"L3MON4D3/LuaSnip",
 				version = "v2.*",
 				config = function()
@@ -40,7 +52,7 @@ return {
 			snippets = { preset = "luasnip" },
 
 			sources = {
-				default = { "lsp", "lazydev", "path", "snippets", "buffer" },
+				default = { "lsp", "codeium", "lazydev", "path", "snippets", "buffer" },
 				providers = {
 					lazydev = {
 						name = "LazyDev",
@@ -48,6 +60,15 @@ return {
 						score_offset = 100, -- show at a higher priority than lsp
 						fallbacks = { "lsp" },
 					},
+          lsp = {
+            score_offset = 90,
+          },
+          codeium = {
+            name = "codeium",
+            module = "blink.compat.source",
+            score_offset = 80,
+            async = true,
+          },
 				},
 				cmdline = {},
 			},

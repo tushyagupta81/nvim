@@ -2,6 +2,7 @@
 return {
 	"ibhagwan/fzf-lua",
 	dependencies = { "echasnovski/mini.icons" },
+  enabled = false,
   lazy = true,
 	opts = function()
 		local config = require("fzf-lua.config")

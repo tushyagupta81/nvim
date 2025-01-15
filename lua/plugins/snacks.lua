@@ -12,6 +12,7 @@ return {
 				easing = "linear",
 				fps = 60, -- frames per second. Global setting for all animations
 			},
+			picker = {},
 			dashboard = {
 				width = 68,
 				preset = {
@@ -177,6 +178,141 @@ return {
 					snacks.zen()
 				end,
 				desc = "Open zen mode",
+			},
+			{
+				"<leader>sb",
+				function()
+					snacks.picker.buffers()
+				end,
+				desc = "Buffers",
+			},
+			{
+				"<leader>sg",
+				function()
+					snacks.picker.grep()
+				end,
+				desc = "Grep",
+			},
+			{
+				"<leader>:",
+				function()
+					snacks.picker.command_history()
+				end,
+				desc = "Command History",
+			},
+			{
+				"<leader><leader>",
+				function()
+					snacks.picker.files()
+				end,
+				desc = "Find Files",
+			},
+			-- find
+			{
+				"<leader>sn",
+				function()
+					snacks.picker.files({
+						---@diagnostic disable-next-line: assign-type-mismatch
+						cwd = vim.fn.stdpath("config"),
+					})
+				end,
+				desc = "Find Config File",
+			},
+			-- Grep
+			{
+				"<leader>sw",
+				function()
+					snacks.picker.grep_word()
+				end,
+				desc = "Visual selection or word",
+				mode = { "n", "x" },
+			},
+			-- search
+			{
+				"<leader>sC",
+				function()
+					snacks.picker.commands()
+				end,
+				desc = "Commands",
+			},
+			{
+				"<leader>sh",
+				function()
+					snacks.picker.help()
+				end,
+				desc = "Help Pages",
+			},
+			{
+				"<leader>sH",
+				function()
+					snacks.picker.highlights()
+				end,
+				desc = "Highlights",
+			},
+			{
+				"<leader>sk",
+				function()
+					snacks.picker.keymaps()
+				end,
+				desc = "Keymaps",
+			},
+			{
+				"<leader>sm",
+				function()
+					snacks.picker.marks()
+				end,
+				desc = "Marks",
+			},
+			{
+				"<leader>sr",
+				function()
+					snacks.picker.resume()
+				end,
+				desc = "Resume",
+			},
+			{
+				"<leader>sq",
+				function()
+					snacks.picker.qflist()
+				end,
+				desc = "Quickfix List",
+			},
+			-- LSP
+			{
+				"<leader>gd",
+				function()
+					snacks.picker.lsp_definitions()
+				end,
+				desc = "Goto Definition",
+			},
+			{
+				"<leader>gr",
+				function()
+					snacks.picker.lsp_references()
+				end,
+				nowait = true,
+				desc = "References",
+			},
+			{
+				"<leader>gI",
+				function()
+					snacks.picker.lsp_implementations()
+				end,
+				desc = "Goto Implementation",
+			},
+			{
+				"<leader>gy",
+				function()
+					snacks.picker.lsp_type_definitions()
+				end,
+				desc = "Goto T[y]pe Definition",
+			},
+			{
+				"<leader>ss",
+				function()
+					snacks.picker.lsp_symbols()
+				end,
+				desc = "LSP Symbols",
 			},
 		}
 	end,
