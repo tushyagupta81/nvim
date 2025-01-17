@@ -2,7 +2,6 @@
 return {
 	{
 		"williamboman/mason.nvim",
-    lazy = true,
 		config = function()
 			require("mason").setup({
 				-- PATH = "append",
@@ -35,6 +34,7 @@ return {
 					"basedpyright", -- python
 					"bashls", -- bash
 					"tailwindcss", -- tailwind
+          "zls" -- zig
 				},
 			})
 			require("mason-tool-installer").setup({
