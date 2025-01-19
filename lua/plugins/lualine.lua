@@ -1,7 +1,10 @@
 ---@diagnostic disable: undefined-field
 return {
 	"nvim-lualine/lualine.nvim",
-	event = "VimEnter",
+	event = {
+		"BufReadPre",
+		"BufNewFile",
+	},
 	config = function()
 		local colors = {
 			blue = "#80a0ff",
