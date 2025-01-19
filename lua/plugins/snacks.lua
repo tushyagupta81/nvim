@@ -294,7 +294,7 @@ return {
 				desc = "References",
 			},
 			{
-				"<leader>gI",
+				"<leader>gi",
 				function()
 					snacks.picker.lsp_implementations()
 				end,
@@ -308,7 +308,7 @@ return {
 				desc = "Goto T[y]pe Definition",
 			},
 			{
-				"<leader>ss",
+        "<leader>ss",
 				function()
 					snacks.picker.lsp_symbols()
 				end,

@@ -48,16 +48,6 @@ return { -- Collection of various small independent plugins/modules
 
 			require("mini.cursorword").setup()
 
-			-- require("mini.indentscope").setup({
-			-- 	draw = {
-			-- 		delay = 100,
-			-- 		priority = 2,
-			-- 		animation = function(s, n)
-			-- 			return s / n * 20
-			-- 		end,
-			-- 	},
-			-- })
-
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
 				highlighters = {
@@ -90,8 +80,9 @@ return { -- Collection of various small independent plugins/modules
 	},
 	{
 		"echasnovski/mini.icons",
+    version = "*",
 		opts = {},
-		lazy = true,
+		-- lazy = true,
 		specs = {
 			{
 				"nvim-tree/nvim-web-devicons",
