@@ -1,13 +1,6 @@
 return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	ft = { "md" },
+	"OXY2DEV/markview.nvim",
+	ft = { "md", "markdown" },
 	event = { "BufReadPre", "BufNewFile" },
-	dependencies = {
-		"nvim-treesitter/nvim-treesitter",
-		"echasnovski/mini.nvim",
-	}, -- if you use the mini.nvim suite
-	---@module 'render-markdown'
-	---@diagnostic disable-next-line: undefined-doc-name
-	---@type render.md.UserConfig
 	opts = {},
 }

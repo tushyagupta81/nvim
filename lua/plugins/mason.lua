@@ -18,7 +18,7 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-    lazy = true,
+		lazy = true,
 		dependencies = {
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
 		},
@@ -34,7 +34,7 @@ return {
 					"basedpyright", -- python
 					"bashls", -- bash
 					"tailwindcss", -- tailwind
-          "zls" -- zig
+					"zls", -- zig
 				},
 			})
 			require("mason-tool-installer").setup({
@@ -46,14 +46,16 @@ return {
 					-- "eslint_d", -- js formatter
 					"clang-format", -- cpp & c formatter
 					"marksman", -- markdown lsp
-					"markdownlint-cli2", -- markdown linter
+					-- "markdownlint-cli2", -- markdown linter
+					"black",
+					"isort",
 				},
 			})
 		end,
 	},
 	{
 		"jay-babu/mason-nvim-dap.nvim",
-    lazy = true,
+		lazy = true,
 		dependencies = {
 			"williamboman/mason.nvim",
 			"mfussenegger/nvim-dap",
