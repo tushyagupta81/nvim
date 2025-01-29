@@ -11,7 +11,7 @@ ls.add_snippets("cpp", {
 		"#in",
 		fmt(
 			[[
-        include <iostream>
+        #include <iostream>
         using namespace std;
 
         int main() {{
