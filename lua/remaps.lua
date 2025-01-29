@@ -45,16 +45,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
--- vim.keymap.set("n", "<leader>cb", ":w<CR>:bd<CR>", { noremap = true, silent = true })
--- vim.keymap.set("n", "<leader>q", ":bd<CR>", { noremap = true, silent = true })
-
 vim.keymap.set("n", "<C-w>+", [[<cmd>horizontal resize +2<cr>]])
 vim.keymap.set("n", "<C-w>-", [[<cmd>horizontal resize -2<cr>]])
 
 vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
 vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
-
-vim.keymap.set({ "n", "v" }, ";", "$")
 
 vim.keymap.set("n", "<leader>r", "<cmd>lua vim.lsp.buf.rename()<CR>")
 
@@ -64,8 +59,3 @@ vim.keymap.set("ca", "Q", "q")
 vim.keymap.set("ca", "Wa", "wa")
 vim.keymap.set("ca", "Wqa", "wqa")
 vim.keymap.set("ca", "WQa", "wqa")
-
-vim.keymap.set("n", "<Tab>", "<cmd>bnext<CR>")
-vim.keymap.set("n", "<S-Tab>", "<cmd>bprev<CR>")
-
-vim.keymap.set("n","<leader>gp","<cmd>G push<CR>")
