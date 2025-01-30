@@ -46,23 +46,16 @@ return {
 				["basedpyright"] = function()
 					lspconfig.basedpyright.setup({
 						capabilities = capabilities,
-						analysis = {
-							typeCheckingMode = "standard",
-							autoSearchPaths = true,
-							useLibraryCodeForTypes = true,
-							autoImportCompletions = true,
-							diagnosticsMode = "openFilesOnly",
-						},
-					})
-				end,
-				["tailwindcss"] = function()
-					lspconfig.tailwindcss.setup({
-						capabilities = capabilities,
-						filetypes = {
-							"javascript",
-							"typescript",
-							"javascriptreact",
-							"typescriptreact",
+						settings = {
+							basedpyright = {
+								analysis = {
+									typeCheckingMode = "standard",
+									autoSearchPaths = true,
+									useLibraryCodeForTypes = true,
+									autoImportCompletions = true,
+									diagnosticsMode = "openFilesOnly",
+								},
+							},
 						},
 					})
 				end,
