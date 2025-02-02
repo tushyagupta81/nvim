@@ -13,12 +13,19 @@ end
 return {
 	{
 		"folke/tokyonight.nvim",
-		enabled = false,
+		enabled = true,
 		lazy = false,
 		priority = 1000,
-		opts = {
-			transparent = true,
-		},
+		config = function()
+			require("tokyonight").setup({
+				transparent = true,
+				styles = {
+					sidebars = "transparent",
+					floats = "transparent",
+				},
+			})
+			ColorMyPencils("tokyonight-night")
+		end,
 		-- vim.cmd.colorscheme("tokyonight-night")
 		-- vim.cmd.colorscheme("tokyonight-moon")
 		-- vim.cmd.colorscheme("tokyonight-storm")
@@ -41,6 +48,7 @@ return {
 	},
 	{
 		"scottmckendry/cyberdream.nvim",
+		enabled = false,
 		lazy = false,
 		priority = 1000,
 		config = function()
@@ -50,7 +58,7 @@ return {
 				borderless_telescope = false,
 				cache = false,
 			})
-			ColorMyPencils()
+			-- ColorMyPencils()
 			-- vim.cmd("colorscheme cyberdream")
 		end,
 	},
