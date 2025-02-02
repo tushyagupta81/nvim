@@ -35,6 +35,7 @@ return {
 					"bashls", -- bash
 					"tailwindcss", -- tailwind
 					"zls", -- zig
+          "clangd", -- cpp
 				},
 			})
 			require("mason-tool-installer").setup({
