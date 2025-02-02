@@ -89,7 +89,7 @@ return {
 						columns = {
 							{ "kind_icon", "sperator", gap = 1 },
 							{ "label", "label_description", gap = 1 },
-							{ "kind" },
+							{ "kind", "source_name", gap = 1 },
 						},
 						components = {
 							sperator = {
