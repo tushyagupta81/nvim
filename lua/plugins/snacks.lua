@@ -6,12 +6,6 @@ return {
 	opts = function()
 		local snacks = require("snacks")
 		return {
-			---@type snacks.animate.Duration|number
-			animate = {
-				duration = 20, -- ms per step
-				easing = "linear",
-				fps = 60, -- frames per second. Global setting for all animations
-			},
 			picker = {},
 			dashboard = {
 				width = 68,
@@ -85,7 +79,7 @@ return {
 			},
 			bigfile = {
 				notify = true, -- show notification when big file detected
-				size = 5 * 1024 * 1024, -- 5MB
+				size = 1 * 1024 * 1024, -- 1MB
 				-- Enable or disable features when big file detected
 				---@param ctx {buf: number, ft:string}
 				setup = function(ctx)
@@ -111,26 +105,9 @@ return {
 			},
 			indent = {
 				enabled = true,
-				animate = {
-					enabled = vim.fn.has("nvim-0.10") == 1,
-					style = "out",
-					easing = "linear",
-					duration = {
-						step = 20, -- ms per step
-						total = 500, -- maximum duration
-					},
-				},
 			},
 			input = {
 				enabled = true,
-			},
-			zen = {
-				toggles = {
-					dim = false,
-				},
-				show = {
-					statusline = true,
-				},
 			},
 		}
 	end,
@@ -173,13 +150,6 @@ return {
 				desc = "Open LazyGit",
 			},
 			{
-				"<leader>zz",
-				function()
-					snacks.zen()
-				end,
-				desc = "Open zen mode",
-			},
-			{
 				"<leader>sb",
 				function()
 					snacks.picker.buffers()
@@ -203,11 +173,20 @@ return {
 			{
 				"<leader><leader>",
 				function()
-					snacks.picker.files()
+					snacks.picker.smart()
 				end,
 				desc = "Find Files",
 			},
-			-- find
+			{
+				"<leader>u",
+				function()
+          local opts = {
+            focus = "list"
+          }
+					snacks.picker.undo(opts)
+				end,
+				desc = "Undo Files",
+			},
 			{
 				"<leader>sn",
 				function()
@@ -308,7 +287,7 @@ return {
 				desc = "Goto T[y]pe Definition",
 			},
 			{
-        "<leader>ss",
+				"<leader>ss",
 				function()
 					snacks.picker.lsp_symbols()
 				end,
