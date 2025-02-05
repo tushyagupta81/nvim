@@ -173,16 +173,18 @@ return {
 			{
 				"<leader><leader>",
 				function()
-					snacks.picker.smart()
+					snacks.picker.smart({
+						multi = { "buffers", "files" },
+					})
 				end,
 				desc = "Find Files",
 			},
 			{
 				"<leader>u",
 				function()
-          local opts = {
-            focus = "list"
-          }
+					local opts = {
+						focus = "list",
+					}
 					snacks.picker.undo(opts)
 				end,
 				desc = "Undo Files",
