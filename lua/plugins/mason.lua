@@ -28,7 +28,7 @@ return {
 				ensure_installed = {
 					"lua_ls", -- lua
 					-- "rust_analyzer", -- rust
-					-- "ts_ls", -- typescript
+					"ts_ls", -- typescript
 					"emmet_language_server", -- emmet
 					-- "emmet_ls", -- emmet
 					-- "eslint", -- javascript
