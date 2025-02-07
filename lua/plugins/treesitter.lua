@@ -32,6 +32,9 @@ return {
 				enable = true,
 				additional_vim_regex_highlighting = { "markdown" },
 			},
+			diagnostic = {
+				update_in_insert = false,
+			},
 			incremental_selection = {
 				enable = true,
 				keymaps = {
