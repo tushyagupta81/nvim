@@ -2,6 +2,7 @@
 return {
 	{
 		"williamboman/mason.nvim",
+    event = "VeryLazy",
 		config = function()
 			require("mason").setup({
 				-- PATH = "append",
@@ -26,29 +27,29 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls", -- lua
-					"rust_analyzer", -- rust
-					"ts_ls", -- typescript
+					-- "rust_analyzer", -- rust
+					-- "ts_ls", -- typescript
 					"emmet_language_server", -- emmet
-					"emmet_ls", -- emmet
+					-- "emmet_ls", -- emmet
 					-- "eslint", -- javascript
 					"basedpyright", -- python
-					"bashls", -- bash
+					-- "bashls", -- bash
 					"tailwindcss", -- tailwind
 					"zls", -- zig
-          "clangd", -- cpp
+					"clangd", -- cpp
 				},
 			})
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					"prettier", -- js, ts & more formatter
 					"stylua", -- lua formatter
-					"ruff", -- python linter & formatter
+					-- "ruff", -- python linter & formatter
 					"biome", -- js & ts formatter
 					-- "eslint_d", -- js formatter
 					"clang-format", -- cpp & c formatter
 					"marksman", -- markdown lsp
 					-- "markdownlint-cli2", -- markdown linter
-					"black",
+					"autopep8",
 					"isort",
 				},
 			})

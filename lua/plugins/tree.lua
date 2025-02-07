@@ -58,6 +58,7 @@
 return {
 	"echasnovski/mini.files",
 	version = false,
+  event = "VeryLazy",
 	config = function()
 		require("mini.files").setup({
 			mappings = {

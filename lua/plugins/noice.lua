@@ -1,7 +1,11 @@
 return {
 	"folke/noice.nvim",
+  event = "VeryLazy",
 	dependencies = {
-		"MunifTanjim/nui.nvim",
+		{
+      "MunifTanjim/nui.nvim",
+      event="VeryLazy",
+    },
 		-- "rcarriga/nvim-notify",
 	},
 	config = function()
