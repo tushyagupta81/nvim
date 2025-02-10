@@ -135,13 +135,13 @@ return {
 				end,
 				desc = "Notification History",
 			},
-			{
-				"<leader>bd",
-				function()
-					snacks.bufdelete()
-				end,
-				desc = "Delete Buffer",
-			},
+			-- {
+			-- 	"<leader>bd",
+			-- 	function()
+			-- 		snacks.bufdelete()
+			-- 	end,
+			-- 	desc = "Delete Buffer",
+			-- },
 			{
 				"<leader>lg",
 				function()
@@ -150,9 +150,12 @@ return {
 				desc = "Open LazyGit",
 			},
 			{
-				"<leader>sb",
+				"<leader>b",
 				function()
-					snacks.picker.buffers()
+					snacks.picker.buffers({
+						focus = "list",
+						current = false,
+					})
 				end,
 				desc = "Buffers",
 			},
