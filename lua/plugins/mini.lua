@@ -13,7 +13,7 @@ return { -- Collection of various small independent plugins/modules
 			--  - va)  - [V]isually select [A]round [)]paren
 			--  - yinq - [Y]ank [I]nside [N]ext [']quote
 			--  - ci'  - [C]hange [I]nside [']quote
-      local ai = require("mini.ai")
+			local ai = require("mini.ai")
 			ai.setup({
 				n_lines = 500,
 				custom_textobjects = {
@@ -80,7 +80,7 @@ return { -- Collection of various small independent plugins/modules
 	},
 	{
 		"echasnovski/mini.icons",
-    version = "*",
+		version = "*",
 		opts = {},
 		-- lazy = true,
 		specs = {
@@ -95,6 +95,59 @@ return { -- Collection of various small independent plugins/modules
 				require("mini.icons").mock_nvim_web_devicons()
 				return package.loaded["nvim-web-devicons"]
 			end
+		end,
+	},
+	{
+		"echasnovski/mini.files",
+		version = false,
+		config = function()
+			require("mini.files").setup({
+				mappings = {
+					close = "q",
+					go_in = "l",
+					go_in_plus = "<CR>",
+					go_out = "h",
+					go_out_plus = "H",
+					reset = "<BS>",
+					reveal_cwd = "@",
+					show_help = "g?",
+					synchronize = "=",
+					trim_left = "<",
+					trim_right = ">",
+				},
+				windows = {
+					-- Maximum number of windows to show side by side
+					max_number = math.huge,
+					-- Whether to show preview of file/directory under cursor
+					preview = true,
+					-- Width of focused window
+					width_focus = 25,
+					-- Width of non-focused window
+					width_nofocus = 15,
+					-- Width of preview window
+					width_preview = 80,
+				},
+			})
+
+			-- require("plugins.utils.mini-files-git")
+
+			local MiniFiles = require("mini.files")
+			local minifiles_toggle = function()
+				if not MiniFiles.close() then
+					MiniFiles.open(vim.api.nvim_buf_get_name(0))
+					MiniFiles.reveal_cwd()
+				end
+			end
+
+			local snacks = require("snacks")
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "MiniFilesActionRename",
+				callback = function(event)
+					snacks.rename.on_rename_file(event.data.from, event.data.to)
+				end,
+			})
+
+			vim.keymap.set("n", "-", minifiles_toggle)
 		end,
 	},
 }
