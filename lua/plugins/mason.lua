@@ -27,13 +27,13 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls", -- lua
-					-- "rust_analyzer", -- rust
+					"rust_analyzer", -- rust
 					"ts_ls", -- typescript
 					"emmet_language_server", -- emmet
 					-- "emmet_ls", -- emmet
 					-- "eslint", -- javascript
 					"basedpyright", -- python
-					-- "bashls", -- bash
+					"bashls", -- bash
 					"tailwindcss", -- tailwind
 					"zls", -- zig
 					"clangd", -- cpp
