@@ -6,7 +6,13 @@ return {
 	opts = function()
 		local snacks = require("snacks")
 		return {
-			picker = {},
+			picker = {
+        sources = {
+          files = {
+            hidden = true,
+          },
+        },
+      },
 			dashboard = {
 				width = 68,
 				preset = {
