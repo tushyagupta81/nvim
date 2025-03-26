@@ -5,7 +5,6 @@ return { -- Collection of various small independent plugins/modules
 			"BufReadPre",
 			"BufNewFile",
 		},
-		version = "*",
 		config = function()
 			-- Better Around/Inside textobjects
 			--
@@ -80,7 +79,6 @@ return { -- Collection of various small independent plugins/modules
 	},
 	{
 		"echasnovski/mini.icons",
-		version = "*",
 		opts = {},
 		-- lazy = true,
 		specs = {
@@ -99,7 +97,6 @@ return { -- Collection of various small independent plugins/modules
 	},
 	{
 		"echasnovski/mini.files",
-		version = false,
 		config = function()
 			require("mini.files").setup({
 				mappings = {

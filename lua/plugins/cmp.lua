@@ -33,7 +33,6 @@ return {
 			"saghen/blink.compat",
 			{
 				"L3MON4D3/LuaSnip",
-				version = "v2.*",
 				config = function()
 					---@diagnostic disable-next-line: assign-type-mismatch
 					require("luasnip.loaders.from_lua").load({ paths = vim.fn.stdpath("config") .. "/snippets" })
@@ -41,7 +40,7 @@ return {
 				end,
 			},
 		},
-		version = "v0.*",
+    version="*",
 		---@module 'blink.cmp'
 		---@type blink.cmp.Config
 		opts = {
