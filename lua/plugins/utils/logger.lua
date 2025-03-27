@@ -23,19 +23,11 @@ local log = function()
 			"n",
 			false
 		)
-	elseif
-		vim.bo.filetype == "python"
-	then
+	elseif vim.bo.filetype == "python" then
+		vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes(makeArg("print()"), true, false, true), "n", false)
+	elseif vim.bo.filetype == "zig" then
 		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes(makeArg("print()"), true, false, true),
-			"n",
-			false
-		)
-	elseif
-		vim.bo.filetype == "zig"
-	then
-		vim.api.nvim_feedkeys(
-			vim.api.nvim_replace_termcodes(makeArg("std.debug.print();",1), true, false, true),
+			vim.api.nvim_replace_termcodes(makeArg('std.debug.print("{any}",.{});', 2), true, false, true),
 			"n",
 			false
 		)
