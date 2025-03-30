@@ -4,6 +4,7 @@ return {
 	{
 		"folke/lazydev.nvim",
 		ft = "lua", -- only load on lua files
+    enabled = false,
 		opts = {
 			library = {
 				-- See the configuration section for more details
@@ -53,14 +54,14 @@ return {
 			snippets = { preset = "luasnip" },
 
 			sources = {
-				default = { "lsp", "snippets", "codeium", "lazydev", "path", "buffer" },
+				default = { "lsp", "snippets", "codeium", "path", "buffer" },
 				providers = {
-					lazydev = {
-						name = "LazyDev",
-						module = "lazydev.integrations.blink",
-						score_offset = 100, -- show at a higher priority than lsp
-						fallbacks = { "lsp" },
-					},
+					-- lazydev = {
+					-- 	name = "LazyDev",
+					-- 	module = "lazydev.integrations.blink",
+					-- 	score_offset = 100, -- show at a higher priority than lsp
+					-- 	fallbacks = { "lsp" },
+					-- },
 					lsp = {
 						score_offset = 90,
 					},

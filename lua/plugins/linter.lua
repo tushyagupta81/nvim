@@ -9,7 +9,7 @@ return {
 			typescript = { "biomejs" },
 			javascriptreact = { "biomejs" },
 			typescriptreact = { "biomejs" },
-			-- python = { "flake8" },
+			python = { "ruff" },
 			-- markdown = { "markdownlint-cli2" },
 			rust = { "clippy" },
 		}

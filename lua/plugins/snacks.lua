@@ -7,12 +7,12 @@ return {
 		local snacks = require("snacks")
 		return {
 			picker = {
-        sources = {
-          files = {
-            hidden = true,
-          },
-        },
-      },
+				sources = {
+					files = {
+						hidden = true,
+					},
+				},
+			},
 			dashboard = {
 				width = 68,
 				preset = {
@@ -207,6 +207,13 @@ return {
 					})
 				end,
 				desc = "Find Config File",
+			},
+			{
+				"<leader>tt",
+				function()
+					Snacks.picker.diagnostics()
+				end,
+				desc = "Diagnostics",
 			},
 			-- Grep
 			{

@@ -61,3 +61,5 @@ vim.keymap.set("ca", "Wqa", "wqa")
 vim.keymap.set("ca", "WQa", "wqa")
 
 require("plugins.utils.logger")
+
+vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
