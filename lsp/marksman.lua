@@ -1,9 +1,9 @@
 return {
-  cmd = { "masksman", "lsp" }, -- Ensure "masksman" is installed
+  cmd = { "marksman", "server" }, -- Ensure "masksman" is installed
   filetypes = { "markdown" },
-  root_marker = { ".git", ".masksman.json" },
+  root_marker = { ".git", ".marksman.json" },
   settings = {
-    masksman = {
+    marksman = {
       linting = true,
       formatting = true,
       completion = true,
