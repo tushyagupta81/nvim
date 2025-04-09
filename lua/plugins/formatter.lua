@@ -18,7 +18,7 @@ return {
 				liquid = { "prettier" },
 				lua = { "stylua" },
 				rust = { "rustfmt" },
-				python = { "ruff" },
+				python = { "ruff_format" },
 				cpp = { "clang-format" },
 			},
 			-- format_on_save = {

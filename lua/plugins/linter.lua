@@ -9,6 +9,7 @@ return {
 			typescript = { "biomejs" },
 			javascriptreact = { "biomejs" },
 			typescriptreact = { "biomejs" },
+			json = { "biomejs" },
 			python = { "ruff" },
 			-- markdown = { "markdownlint-cli2" },
 			rust = { "clippy" },
