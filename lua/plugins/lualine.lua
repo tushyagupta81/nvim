@@ -1,6 +1,7 @@
 ---@diagnostic disable: undefined-field
 return {
 	"nvim-lualine/lualine.nvim",
+  enabled = false,
 	event = {
 		"BufReadPre",
 		"BufNewFile",

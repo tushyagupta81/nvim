@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 require("set")
 require("remaps")
+require("lsp")
+require("statusline")
 
 require("lazy").setup({
 	-- importing directories
