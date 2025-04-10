@@ -5,7 +5,7 @@ return {
 			"BufReadPre",
 			"BufNewFile",
 		},
-		ft = { "js", "ts", "jsx", "tsx" },
+		ft = { "javascript", "typescript", "javascriptreact", "typescriptreact" },
 		name = "tailwind-tools",
 		build = ":UpdateRemotePlugins",
 		dependencies = {
