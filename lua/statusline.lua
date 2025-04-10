@@ -106,7 +106,8 @@ local lsp = function()
 end
 
 local filetype = function()
-	return string.format(" %s ", vim.bo.filetype):upper()
+  local str = string.format(" %s ", vim.bo.filetype):lower()
+	return (str:sub(1,2):upper() .. str:sub(3))
 end
 
 local lineinfo = function()
