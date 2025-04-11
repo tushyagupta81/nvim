@@ -86,7 +86,7 @@ local lsp = function()
 	local info = ""
 
 	if count["errors"] ~= 0 then
-		errors = " %#LspDiagnosticsSignError#󰅙 " .. count["errors"]
+		errors = " %#LspDiagnosticsSignError# " .. count["errors"]
 	end
 	if count["warnings"] ~= 0 then
 		warnings = " %#LspDiagnosticsSignWarning# " .. count["warnings"]
@@ -95,7 +95,7 @@ local lsp = function()
 		hints = " %#LspDiagnosticsSignHint#󰌶 " .. count["hints"]
 	end
 	if count["info"] ~= 0 then
-		info = " %#LspDiagnosticsSignInformation#󰋽 " .. count["info"]
+		info = " %#LspDiagnosticsSignInformation# " .. count["info"]
 	end
 
 	if errors == "" and warnings == "" and hints == "" and info == "" then
