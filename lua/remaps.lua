@@ -63,3 +63,5 @@ vim.keymap.set("ca", "WQa", "wqa")
 require("plugins.utils.logger")
 
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
+
+vim.keymap.set("n", "gy", "yypkgccj", { remap = true })
