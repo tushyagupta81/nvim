@@ -6,19 +6,18 @@ return {
 	event = "InsertEnter",
 	dependencies = {
 		"rafamadriz/friendly-snippets",
-		{
-			"Exafunction/codeium.nvim",
-			dependencies = "nvim-lua/plenary.nvim",
-			build = ":Codeium Auth",
-			config = function()
-				require("codeium").setup({
-					virtual_text = {
-						enabled = false,
-					},
-				})
-			end,
-		},
-		"saghen/blink.compat",
+		-- {
+		-- 	"Exafunction/windsurf.nvim",
+		-- 	dependencies = "nvim-lua/plenary.nvim",
+		-- 	build = ":Codeium Auth",
+		-- 	config = function()
+		-- 		require("codeium").setup({
+		-- 			virtual_text = {
+		-- 				enabled = false,
+		-- 			},
+		-- 		})
+		-- 	end,
+		-- },
 		{
 			"L3MON4D3/LuaSnip",
 			config = function()
@@ -41,7 +40,7 @@ return {
 		snippets = { preset = "luasnip" },
 
 		sources = {
-			default = { "lsp", "snippets", "codeium", "path", "buffer" },
+			default = { "lsp", "snippets", "path", "buffer" },
 			providers = {
 				lsp = {
 					score_offset = 90,
@@ -98,12 +97,12 @@ return {
 						end
 					end,
 				},
-				codeium = {
-					name = "codeium",
-					module = "blink.compat.source",
-					score_offset = 80,
-					async = true,
-				},
+				-- codeium = {
+				--       name = "Codeium",
+				--       module = "codeium.blink",
+				-- 	score_offset = 80,
+				--       async = true,
+				--     },
 			},
 		},
 
