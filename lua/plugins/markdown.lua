@@ -8,12 +8,16 @@ return {
 			vim.cmd([[call mkdp#util#install()]])
 		end,
 		config = function()
-			vim.keymap.set("n", "<leader>pre", "<cmd>MarkdownPreview<CR>")
+			vim.keymap.set("n", "<leader>pre", "<cmd>MarkdownPreview<CR>", {desc = "Enable markdown preview"})
 		end,
 	},
 	{
 		"OXY2DEV/markview.nvim",
 		lazy = false,
+    config = function ()
+      vim.keymap.set("n", "<leader>pd", "<cmd>Markview disable<CR>", {desc = "Disable markview"})
+      vim.keymap.set("n", "<leader>pe", "<cmd>Markview enable<CR>", {desc = "Enable markview"})
+    end
 
 		-- For blink.cmp's completion
 		-- source
