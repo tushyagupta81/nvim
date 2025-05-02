@@ -1,17 +1,11 @@
 return { -- Collection of various small independent plugins/modules
 	{
-		"echasnovski/mini.nvim",
+		"echasnovski/mini.ai",
 		event = {
 			"BufReadPre",
 			"BufNewFile",
 		},
 		config = function()
-			-- Better Around/Inside textobjects
-			--
-			-- Examples:
-			--  - va)  - [V]isually select [A]round [)]paren
-			--  - yinq - [Y]ank [I]nside [N]ext [']quote
-			--  - ci'  - [C]hange [I]nside [']quote
 			local ai = require("mini.ai")
 			ai.setup({
 				n_lines = 500,
@@ -37,16 +31,35 @@ return { -- Collection of various small independent plugins/modules
 					U = ai.gen_spec.function_call({ name_pattern = "[%w_]" }), -- without dot in function name
 				},
 			})
-
-			-- Add/delete/replace surroundings (brackets, quotes, etc.)
-			--
-			-- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-			-- - sd'   - [S]urround [D]elete [']quotes
-			-- - sr)'  - [S]urround [R]eplace [)] [']
+		end,
+	},
+	{
+		"echasnovski/mini.surround",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
 			require("mini.surround").setup()
-
+		end,
+	},
+	{
+		"echasnovski/mini.cursorword",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
 			require("mini.cursorword").setup()
-
+		end,
+	},
+	{
+		"echasnovski/mini.hipatterns",
+		event = {
+			"BufReadPre",
+			"BufNewFile",
+		},
+		config = function()
 			local hipatterns = require("mini.hipatterns")
 			hipatterns.setup({
 				highlighters = {
