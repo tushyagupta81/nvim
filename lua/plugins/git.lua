@@ -25,7 +25,7 @@ return {
       event = "VeryLazy",
     },
 		config = function()
-			vim.keymap.set("n", "<leader>dv", ":DiffviewOpen<CR>")
+			vim.keymap.set("n", "<leader>dvo", ":DiffviewOpen<CR>")
 			vim.keymap.set("n", "<leader>dvc", ":DiffviewClose<CR>")
 		end,
 	},
