@@ -31,3 +31,7 @@ vim.diagnostic.config({
 		},
 	},
 })
+
+vim.keymap.set("n", "<leader>e", function()
+	vim.diagnostic.open_float({ border = "single" })
+end, { desc = "Open floating diagnostic message" })
