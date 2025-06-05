@@ -8,10 +8,10 @@ function ColorMyPencils(color)
 		cyan = "#79dac8",
 		black = "#080808",
 		dark_red = "#f44e3f",
-    orange = "#ff9e64",
+		orange = "#ff9e64",
 		white = "#c6c6c6",
 		red = "#ff5189",
-    dark_orange = "#D84727",
+		dark_orange = "#D84727",
 		violet = "#d183e8",
 		green = "#8DC17C",
 		gray = "#303030",
@@ -24,9 +24,10 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "CursorLineNr", { fg = colors.orange })
 	vim.api.nvim_set_hl(0, "MiniCursorword", { underline = true })
 	vim.api.nvim_set_hl(0, "MiniCursorwordCurrent", { underline = true })
-	vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpActiveParameter", { fg = colors.dark_orange  })
+	vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpActiveParameter", { fg = colors.dark_orange })
 	vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = colors.yellow })
 	vim.api.nvim_set_hl(0, "LazyButton", { bg = "none" })
+	vim.api.nvim_set_hl(0, "WinSeparator", { bold = true, cterm = { bold = true }, fg = "#ffffff" })
 
 	-- Statusline Colors
 	vim.api.nvim_set_hl(0, "StatusLineAccent", { bg = colors.blue, fg = colors.black })
@@ -39,7 +40,7 @@ function ColorMyPencils(color)
 
 	vim.api.nvim_set_hl(0, "StatuslineFilename", { bg = colors.cyan, fg = colors.black })
 	vim.api.nvim_set_hl(0, "StatuslineGit", { bg = colors.red, fg = colors.black })
-  vim.api.nvim_set_hl(0, "StatuslineMacro", { bg = "none", fg = colors.orange })
+	vim.api.nvim_set_hl(0, "StatuslineMacro", { bg = "none", fg = colors.orange })
 	vim.api.nvim_set_hl(0, "StatuslineFiletype", { bg = colors.red, fg = colors.black })
 	vim.api.nvim_set_hl(0, "StatuslineLineInfo", { bg = colors.blue, fg = colors.black })
 

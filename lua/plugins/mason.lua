@@ -24,6 +24,7 @@ return {
 					"prettier", -- js, ts & more formatter
 					"stylua", -- lua formatter
 					"ruff", -- python linter & formatter
+          "isort", -- python import sorter
 					"biome", -- js & ts formatter
 					-- "eslint_d", -- js formatter
 					"clang-format", -- cpp & c formatter
