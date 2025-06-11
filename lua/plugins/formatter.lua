@@ -20,12 +20,18 @@ return {
 				rust = { "rustfmt" },
 				python = { "ruff_format", "isort" },
 				cpp = { "clang-format" },
+				markdown = { "prettier" },
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,
 			-- 	async = false,
 			-- 	timeout_ms = 1000,
 			-- },
+			formatters = {
+				prettier = {
+					prepend_args = { "--tab-width", 4 },
+				},
+			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>gf", function()
