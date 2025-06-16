@@ -11,27 +11,20 @@ return {
 				javascriptreact = { "biome" },
 				typescriptreact = { "biome" },
 				json = { "biome" },
-				css = { "prettier" },
-				html = { "prettier" },
-				yaml = { "prettier" },
-				graphql = { "prettier" },
-				liquid = { "prettier" },
+				css = { "prettierd" },
+				html = { "prettierd" },
+				yaml = { "prettierd" },
 				lua = { "stylua" },
 				rust = { "rustfmt" },
 				python = { "ruff_format", "isort" },
 				cpp = { "clang-format" },
-				markdown = { "prettier" },
+        markdown = {"mdformat"},
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,
 			-- 	async = false,
 			-- 	timeout_ms = 1000,
 			-- },
-			formatters = {
-				prettier = {
-					prepend_args = { "--tab-width", 2 },
-				},
-			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>gf", function()

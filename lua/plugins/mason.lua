@@ -21,7 +21,7 @@ return {
 			require("mason-tool-installer").setup({
 				ensure_installed = {
 					-- Formatters and Linters
-					"prettier", -- js, ts & more formatter
+					"prettierd", -- html, css, etc
 					"stylua", -- lua formatter
 					"ruff", -- python linter & formatter
           "isort", -- python import sorter
@@ -30,6 +30,7 @@ return {
 					"clang-format", -- cpp & c formatter
 					"marksman", -- markdown lsp
 					-- "markdownlint-cli2", -- markdown linter
+          "mdformat", -- markdown formatter
 
 					-- LSP's
 					"lua-language-server", -- lua
