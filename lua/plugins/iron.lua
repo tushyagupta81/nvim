@@ -1,10 +1,6 @@
 return {
 	"Vigemus/iron.nvim",
 	ft = { "python" },
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
 	config = function()
 		local iron = require("iron.core")
 		local view = require("iron.view")
@@ -24,8 +20,12 @@ return {
 					python = {
 						command = function()
 							local ipythonAvailable = vim.fn.executable("ipython") == 1
-							local binary = ipythonAvailable and "ipython" or "python3"
-							return { binary }
+							if ipythonAvailable then
+								-- The --no-autoindent is VERY important
+								return { "ipython", "--no-autoindent" }
+							else
+								return { "python3" }
+							end
 						end,
 						format = common.bracketed_paste_python,
 						block_dividers = { "# %%", "#%%" },
@@ -75,5 +75,26 @@ return {
 		-- iron also has a list of commands, see :h iron-commands for all available commands
 		vim.keymap.set("n", "<space>rf", "<cmd>IronFocus<cr>")
 		vim.keymap.set("n", "<space>rh", "<cmd>IronHide<cr>")
+
+		-- Insert the #%%
+		vim.keymap.set("n", "<space>ii", function()
+
+			local current_line = vim.fn.line(".")
+			-- Insert two empty lines below the current line
+			vim.fn.append(current_line, { "", "" })
+			-- Insert '#%%' at the start of the second new line
+			vim.fn.setline(current_line + 2, "#%%")
+			vim.api.nvim_win_set_cursor(0, { current_line + 2, 0 })
+		end, { desc = "Insert #%% below" })
+
+		vim.keymap.set("n", "<space>iI", function()
+			local current_line = vim.fn.line(".")
+			-- Insert two empty lines below the current line
+			vim.fn.append(current_line - 1, { "", "" })
+			-- Insert '#%%' at the start of the second new line
+			vim.fn.setline(current_line, "#%%")
+			vim.api.nvim_win_set_cursor(0, { current_line, 0 })
+		end, { desc = "Insert #%% above" })
+
 	end,
 }
