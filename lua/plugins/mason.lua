@@ -31,6 +31,7 @@ return {
 					"marksman", -- markdown lsp
 					-- "markdownlint-cli2", -- markdown linter
           "mdformat", -- markdown formatter
+          "pyproject-fmt", -- toml formatter
 
 					-- LSP's
 					"lua-language-server", -- lua

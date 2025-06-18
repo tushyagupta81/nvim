@@ -18,7 +18,8 @@ return {
 				rust = { "rustfmt" },
 				python = { "ruff_format", "isort" },
 				cpp = { "clang-format" },
-        markdown = {"mdformat"},
+				markdown = { "mdformat" },
+				toml = { "pyproject-fmt" },
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,

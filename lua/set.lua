@@ -43,11 +43,13 @@ vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
 
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.bo.shiftwidth = 2
-    vim.bo.tabstop = 2
-    vim.bo.softtabstop = 2
-    vim.bo.expandtab = true  -- Use spaces instead of tabs
-  end,
+	pattern = "markdown",
+	callback = function()
+		vim.bo.shiftwidth = 2
+		vim.bo.tabstop = 2
+		vim.bo.softtabstop = 2
+		vim.bo.expandtab = true -- Use spaces instead of tabs
+		vim.opt_local.spell = true
+		vim.opt_local.spelllang = { "en_us" }
+	end,
 })
