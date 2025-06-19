@@ -21,8 +21,31 @@ return {
 						command = function()
 							local ipythonAvailable = vim.fn.executable("ipython") == 1
 							if ipythonAvailable then
+								local has_matplotlib = false
+
+								local handle = io.popen(
+									"python3 -c 'import importlib.util; print(importlib.util.find_spec(\"matplotlib\") is not None)'"
+								)
+								if handle then
+									local result = handle:read("*a")
+									handle:close()
+									has_matplotlib = result:match("True") ~= nil
+								end
+
+
 								-- The --no-autoindent is VERY important
-								return { "ipython", "--no-autoindent" }
+								local config =  {
+									"ipython",
+									"--no-autoindent",
+									"--no-confirm-exit",
+								}
+
+                -- For matplotlib
+                if has_matplotlib then
+                  table.insert(config, "--matplotlib")
+                end
+
+                return config
 							else
 								return { "python3" }
 							end
@@ -78,7 +101,6 @@ return {
 
 		-- Insert the #%%
 		vim.keymap.set("n", "<space>ii", function()
-
 			local current_line = vim.fn.line(".")
 			-- Insert two empty lines below the current line
 			vim.fn.append(current_line, { "", "" })
@@ -95,6 +117,5 @@ return {
 			vim.fn.setline(current_line, "#%%")
 			vim.api.nvim_win_set_cursor(0, { current_line, 0 })
 		end, { desc = "Insert #%% above" })
-
 	end,
 }
