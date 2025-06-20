@@ -63,7 +63,7 @@ local filename = function()
 	if fname == "" or string.find(fname, "Scratch") then
 		return ""
 	end
-	return fname .. " "
+	return fname .. " %m "
 end
 
 local lsp = function()
