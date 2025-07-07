@@ -85,7 +85,7 @@ return {
 				send_code_block = "<space>ie",
 				send_code_block_and_move = "<space>ib",
 				exit = "<space>iq",
-				clear = "<space>ic",
+				send_until_cursor = "<space>ic",
 			},
 			-- If the highlight is on, you can change how it looks
 			-- For the available options, check nvim_set_hl
