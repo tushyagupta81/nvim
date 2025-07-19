@@ -59,6 +59,7 @@ vim.keymap.set("ca", "Q", "q")
 vim.keymap.set("ca", "Wa", "wa")
 vim.keymap.set("ca", "Wqa", "wqa")
 vim.keymap.set("ca", "WQa", "wqa")
+vim.keymap.set("ca", "Vs", "vs")
 
 require("plugins.utils.logger")
 
