@@ -14,6 +14,7 @@ return {
 	{
 		"OXY2DEV/markview.nvim",
 		ft = { "markdown" },
+    enbaled = false,
 		config = function()
 			vim.keymap.set("n", "<leader>pd", "<cmd>Markview disable<CR>", { desc = "Disable markview" })
 			vim.keymap.set("n", "<leader>pe", "<cmd>Markview enable<CR>", { desc = "Enable markview" })

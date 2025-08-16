@@ -139,8 +139,6 @@ return { -- Collection of various small independent plugins/modules
 				},
 			})
 
-			-- require("plugins.utils.mini-files-git")
-
 			local MiniFiles = require("mini.files")
 			local minifiles_toggle = function()
 				if not MiniFiles.close() then
