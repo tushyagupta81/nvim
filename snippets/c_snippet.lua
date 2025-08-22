@@ -1,9 +1,14 @@
 local ls = require("luasnip")
 local s = ls.snippet
+local f = ls.function_node
 -- local t = ls.text_node
 local i = ls.insert_node
 
 local fmt = require("luasnip.extras.fmt").fmt
+
+local get_filename = function(_, _)
+	return vim.fn.fnamemodify(vim.fn.expand("%"), ":t:r")
+end
 
 ls.add_snippets("c", {
 	-- Function snippet using fmt for formatting
@@ -12,14 +17,13 @@ ls.add_snippets("c", {
 		fmt(
 			[[
         #include "raylib.h"
-        #include "apps.h"
 
-        int bar_graph() {{
+        int {}() {{
           // Tell the window to use vsync and work on high DPI displays
           SetConfigFlags(FLAG_VSYNC_HINT | FLAG_WINDOW_HIGHDPI);
 
           // Create the window and OpenGL context
-          InitWindow(1280, 800, "Hello world");
+          InitWindow(1280, 800, "{}");
 
           // game loop
           while (!WindowShouldClose()) {{
@@ -30,7 +34,6 @@ ls.add_snippets("c", {
             ClearBackground(BLACK);
             {}
 
-
             EndDrawing();
           }}
 
@@ -40,7 +43,9 @@ ls.add_snippets("c", {
         }}
       ]],
 			{
-				i(0),
+				f(get_filename, {}),
+				f(get_filename, {}),
+				i(),
 			}
 		)
 	),
