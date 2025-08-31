@@ -27,7 +27,7 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpActiveParameter", { fg = colors.dark_orange })
 	vim.api.nvim_set_hl(0, "SnacksIndentScope", { fg = colors.yellow })
 	vim.api.nvim_set_hl(0, "LazyButton", { bg = "none" })
-	vim.api.nvim_set_hl(0, "WinSeparator", { bold = true, cterm = { bold = true }, fg = "#ffffff" })
+	vim.api.nvim_set_hl(0, "WinSeparator", { bold = true, fg = colors.white })
 
 	-- Statusline Colors
 	vim.api.nvim_set_hl(0, "StatusLineAccent", { bg = colors.blue, fg = colors.black })

@@ -20,6 +20,7 @@ return {
 				cpp = { "clang-format" },
 				markdown = { "mdformat" },
 				toml = { "pyproject-fmt" },
+				xml = { "xmlformatter" },
 			},
 			-- format_on_save = {
 			-- 	lsp_fallback = true,

@@ -45,6 +45,7 @@ return {
 					"tailwindcss-language-server", -- tailwind
 					"zls", -- zig
 					"clangd", -- cpp
+          "xmlformatter", -- formatter for xml
 
 					-- Debug adapters
 					"codelldb", -- c c++ rust zig
