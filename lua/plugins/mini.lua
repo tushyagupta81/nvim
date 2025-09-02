@@ -1,6 +1,6 @@
 return { -- Collection of various small independent plugins/modules
 	{
-		"echasnovski/mini.ai",
+		"nvim-mini/mini.ai",
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -34,7 +34,7 @@ return { -- Collection of various small independent plugins/modules
 		end,
 	},
 	{
-		"echasnovski/mini.surround",
+		"nvim-mini/mini.surround",
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -44,7 +44,7 @@ return { -- Collection of various small independent plugins/modules
 		end,
 	},
 	{
-		"echasnovski/mini.cursorword",
+		"nvim-mini/mini.cursorword",
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -54,7 +54,7 @@ return { -- Collection of various small independent plugins/modules
 		end,
 	},
 	{
-		"echasnovski/mini.hipatterns",
+		"nvim-mini/mini.hipatterns",
 		event = {
 			"BufReadPre",
 			"BufNewFile",
@@ -91,7 +91,7 @@ return { -- Collection of various small independent plugins/modules
 		end,
 	},
 	{
-		"echasnovski/mini.icons",
+		"nvim-mini/mini.icons",
 		opts = {},
 		-- lazy = true,
 		specs = {
@@ -109,7 +109,7 @@ return { -- Collection of various small independent plugins/modules
 		end,
 	},
 	{
-		"echasnovski/mini.files",
+		"nvim-mini/mini.files",
 		config = function()
 			require("mini.files").setup({
 				mappings = {
