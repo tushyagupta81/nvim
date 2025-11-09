@@ -11,6 +11,7 @@ local lsp_configs = {
 	"rust-analyzer",
 	"tailwindcss-language-server",
 	"typescript-language-server",
+	"astro-ls",
 	"zls",
 }
 
