@@ -8,7 +8,7 @@ return {
 			formatters_by_ft = {
 				javascript = { "biome" },
 				typescript = { "biome" },
-				astro = { "biome" },
+				astro = { "prettierd" },
 				javascriptreact = { "biome" },
 				typescriptreact = { "biome" },
 				json = { "biome" },
