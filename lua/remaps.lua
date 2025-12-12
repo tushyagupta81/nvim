@@ -66,3 +66,6 @@ require("plugins.utils.logger")
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 
 vim.keymap.set("n", "gy", "yypkgccj", { remap = true })
+vim.keymap.set("v", "gy", "y`>pkgvgc", { remap = true })
+
+vim.keymap.set("i", "<C-l>", "<Esc>A;", { remap = true })

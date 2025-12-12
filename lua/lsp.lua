@@ -18,7 +18,7 @@ local lsp_configs = {
 vim.lsp.enable(lsp_configs)
 
 vim.diagnostic.config({
-	virtual_text = { current_line = true },
+	virtual_text = { current_line = false },
 	signs = {
 		text = {
 			[vim.diagnostic.severity.ERROR] = "",
