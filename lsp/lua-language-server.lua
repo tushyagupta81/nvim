@@ -13,6 +13,7 @@ return {
 			workspace = {
 				library = (function()
 					local lib = {}
+					---@diagnostic disable-next-line: undefined-field
 					local cwd = vim.loop.cwd() -- Get current working directory
 					if cwd and cwd:find(".config/nvim", 1, true) then
 						-- Only add Neovim runtime files if editing files inside ~/.config/nvim
