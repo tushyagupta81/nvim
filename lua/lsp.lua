@@ -13,6 +13,7 @@ local lsp_configs = {
 	"typescript-language-server",
 	"astro-ls",
 	"zls",
+	"neocmakelsp",
 }
 
 vim.lsp.enable(lsp_configs)
