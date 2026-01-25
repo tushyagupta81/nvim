@@ -1,13 +1,18 @@
+---@type vim.lsp.Config
 return {
-  cmd = { "bash-language-server", "start" }, -- Ensure it's installed and in your PATH
-  filetypes = { "sh", "bash", "zsh" },
-  root_marker = { ".git", ".bashrc", ".bash_profile" },
+  cmd = { 'bash-language-server', 'start' },
   settings = {
     bashIde = {
-      globPattern = "*@(.sh|.inc|.bash|.command)", -- Recognizes common Bash script extensions
-      backgroundAnalysisMaxFiles = 500, -- Adjust if you have many scripts
-      shellcheckPath = "shellcheck", -- Ensure `shellcheck` is installed for linting
-      explainshellEndpoint = "https://explainshell.com/explain", -- Optional: Online command explanation
+      -- Glob pattern for finding and parsing shell script files in the workspace.
+      -- Used by the background analysis features across files.
+
+      -- Prevent recursive scanning which will cause issues when opening a file
+      -- directly in the home directory (e.g. ~/foo.sh).
+      --
+      -- Default upstream pattern is "**/*@(.sh|.inc|.bash|.command)".
+      globPattern = vim.env.GLOB_PATTERN or '*@(.sh|.inc|.bash|.command)',
     },
   },
+  filetypes = { 'bash', 'sh' },
+  root_markers = { '.git' },
 }

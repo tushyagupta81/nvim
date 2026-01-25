@@ -1,11 +1,12 @@
+---@brief
+--- https://github.com/zigtools/zls
+---
+--- Zig LSP implementation + Zig Language Server
+
+---@type vim.lsp.Config
 return {
-  cmd = { "zls" }, -- Ensure it's installed and in your PATH
-  filetypes = { "zig" },
-  root_marker = { "build.zig", "zls.json", ".git" },
-  settings = {
-    zls = {
-      enable_autofix = true,
-      warn_style = true,
-    },
-  },
+  cmd = { 'zls' },
+  filetypes = { 'zig', 'zir' },
+  root_markers = { 'zls.json', 'build.zig', '.git' },
+  workspace_required = false,
 }
