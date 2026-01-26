@@ -16,6 +16,7 @@ require("set")
 require("remaps")
 require("lsp")
 require("statusline")
+require("autocmds")
 
 require("lazy").setup({
 	-- importing directories
