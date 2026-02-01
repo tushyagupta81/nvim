@@ -1,7 +1,7 @@
 -- vim.lsp.enable({ "clangd", "basedpyright", "asm-lsp", "rust-analyzer", "emmet-language-server", "lua-language-server", "bash-language-server" })
 local lsp_configs = {
-	"arduino-language-server",
-	"asm-lsp",
+	-- "arduino-language-server",
+	-- "asm-lsp",
 	"basedpyright",
 	"bash-language-server",
 	"clangd",
@@ -9,10 +9,10 @@ local lsp_configs = {
 	"lua-language-server",
 	"marksman",
 	"rust-analyzer",
-	"tailwindcss-language-server",
-	"typescript-language-server",
+	-- "tailwindcss-language-server",
+	-- "typescript-language-server",
 	"astro-ls",
-	"zls",
+	-- "zls",
 	"neocmakelsp",
 }
 
