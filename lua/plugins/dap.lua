@@ -4,7 +4,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"theHamsta/nvim-dap-virtual-text",
-    "igorlfs/nvim-dap-view",
+		"igorlfs/nvim-dap-view",
 	},
 	config = function()
 		require("nvim-dap-virtual-text").setup({
@@ -29,21 +29,53 @@ return {
 			virt_lines = false,
 			virt_text_win_col = nil,
 		})
+
+		local dap_view = require("dap-view")
+
+		dap_view.setup({
+			winbar = {
+				controls = {
+					enabled = true,
+					position = "right",
+					buttons = {
+						"play",
+						"step_into",
+						"step_over",
+						"step_out",
+						"step_back",
+						"run_last",
+						"terminate",
+						"disconnect",
+					},
+					custom_buttons = {},
+				},
+			},
+			windows = {
+				size = 0.3,
+				position = "below",
+				terminal = {
+					size = 0.25,
+					position = "left",
+					-- List of debug adapters for which the terminal should be ALWAYS hidden
+					hide = {},
+				},
+			},
+		})
+
 		local dap = require("dap")
 
-
-    dap.listeners.before.attach.dapui_config = function()
-      vim.cmd([[:DapViewOpen]])
-    end
-    dap.listeners.before.launch.dapui_config = function()
-      vim.cmd([[:DapViewOpen]])
-    end
-    dap.listeners.before.event_terminated.dapui_config = function()
-      vim.cmd([[:DapViewClose]])
-    end
-    dap.listeners.before.event_exited.dapui_config = function()
-      vim.cmd([[:DapViewClose]])
-    end
+		dap.listeners.before.attach.dapui_config = function()
+			dap_view.open()
+		end
+		dap.listeners.before.launch.dapui_config = function()
+			dap_view.open()
+		end
+		dap.listeners.before.event_terminated.dapui_config = function()
+			dap_view.close()
+		end
+		dap.listeners.before.event_exited.dapui_config = function()
+			dap_view.close()
+		end
 
 		vim.g.dap_virtual_text = true
 		vim.fn.sign_define("DapBreakpoint", { text = "🔵", texthl = "", linehl = "", numhl = "" })
@@ -57,5 +89,12 @@ return {
 		vim.keymap.set("n", "<leader>db", dap.step_back, {})
 		vim.keymap.set("n", "<leader>do", dap.step_out, {})
 		vim.keymap.set("n", "<leader>dt", dap.terminate, {})
+
+		vim.api.nvim_create_autocmd({ "FileType" }, {
+			pattern = { "dap-view", "dap-view-term", "dap-repl" }, -- dap-repl is set by `nvim-dap`
+			callback = function(args)
+				vim.keymap.set("n", "q", "<C-w>q", { buffer = args.buf })
+			end,
+		})
 	end,
 }
