@@ -1,16 +1,11 @@
-return {
-	"b0o/incline.nvim",
-	name = "incline",
-	dependencies = {
-		"SmiteshP/nvim-navic",
-		"nvim-tree/nvim-web-devicons",
-	},
-	event = {
-		"BufReadPre",
-		"BufNewFile",
-	},
-	config = function()
-		-- require("incline").setup({})
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		vim.pack.add({
+			"https://github.com/b0o/incline.nvim",
+			"https://github.com/SmiteshP/nvim-navic",
+			"https://github.com/nvim-tree/nvim-web-devicons",
+		})
 		local helpers = require("incline.helpers")
 		local navic = require("nvim-navic")
 		local devicons = require("nvim-web-devicons")
@@ -61,4 +56,4 @@ return {
 			end,
 		})
 	end,
-}
+})

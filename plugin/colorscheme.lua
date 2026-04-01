@@ -54,70 +54,61 @@ function ColorMyPencils(color)
 	vim.api.nvim_set_hl(0, "LspDiagnosticsSignInformation", { bg = colors.gray, fg = colors.cyan })
 end
 
-return {
-	{
-		"folke/tokyonight.nvim",
-		enabled = true,
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("tokyonight").setup({
-				transparent = true,
-				styles = {
-					sidebars = "transparent",
-					floats = "transparent",
-				},
-				dim_inactive = false,
-				cache = true,
-			})
-			ColorMyPencils("tokyonight-night")
-			-- vim.cmd.colorscheme("tokyonight-night")
-			-- vim.cmd.colorscheme("tokyonight-moon")
-			-- vim.cmd.colorscheme("tokyonight-storm")
-			-- vim.cmd.colorscheme("tokyonight-day")
-		end,
+vim.pack.add({
+	"https://github.com/folke/tokyonight.nvim",
+})
+require("tokyonight").setup({
+	transparent = true,
+	styles = {
+		sidebars = "transparent",
+		floats = "transparent",
 	},
-	{
-		"catppuccin/nvim",
-		name = "catppuccin",
-		enabled = false,
-		priority = 1000,
-		config = function()
-			require("catppuccin").setup({
-				transparent_background = true,
-			})
-			-- vim.cmd.colorscheme("catppuccin-macchiato")
-			-- vim.cmd.colorscheme("catppuccin-mocha")
-			-- vim.cmd.colorscheme("catppuccin-latte")
-			-- vim.cmd.colorscheme("catppuccin-frappe")
-		end,
-	},
-	{
-		"scottmckendry/cyberdream.nvim",
-		enabled = false,
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("cyberdream").setup({
-				-- Enable transparent background
-				transparent = true,
-				borderless_telescope = false,
-				cache = false,
-			})
-			-- ColorMyPencils()
-			-- vim.cmd("colorscheme cyberdream")
-		end,
-	},
-	{
-		"diegoulloao/neofusion.nvim",
-		enabled = false,
-		name = "neofusion",
-		priority = 1000,
-		config = function()
-			require("neofusion").setup({
-				transparent_mode = true,
-			})
-			-- vim.cmd.colorscheme("neofusion")
-		end,
-	},
-}
+	dim_inactive = false,
+	cache = true,
+})
+ColorMyPencils("tokyonight-night")
+-- return {
+-- 	{
+-- 		"catppuccin/nvim",
+-- 		name = "catppuccin",
+-- 		enabled = false,
+-- 		priority = 1000,
+-- 		config = function()
+-- 			require("catppuccin").setup({
+-- 				transparent_background = true,
+-- 			})
+-- 			-- vim.cmd.colorscheme("catppuccin-macchiato")
+-- 			-- vim.cmd.colorscheme("catppuccin-mocha")
+-- 			-- vim.cmd.colorscheme("catppuccin-latte")
+-- 			-- vim.cmd.colorscheme("catppuccin-frappe")
+-- 		end,
+-- 	},
+-- 	{
+-- 		"scottmckendry/cyberdream.nvim",
+-- 		enabled = false,
+-- 		lazy = false,
+-- 		priority = 1000,
+-- 		config = function()
+-- 			require("cyberdream").setup({
+-- 				-- Enable transparent background
+-- 				transparent = true,
+-- 				borderless_telescope = false,
+-- 				cache = false,
+-- 			})
+-- 			-- ColorMyPencils()
+-- 			-- vim.cmd("colorscheme cyberdream")
+-- 		end,
+-- 	},
+-- 	{
+-- 		"diegoulloao/neofusion.nvim",
+-- 		enabled = false,
+-- 		name = "neofusion",
+-- 		priority = 1000,
+-- 		config = function()
+-- 			require("neofusion").setup({
+-- 				transparent_mode = true,
+-- 			})
+-- 			-- vim.cmd.colorscheme("neofusion")
+-- 		end,
+-- 	},
+-- }

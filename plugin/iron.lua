@@ -1,7 +1,9 @@
-return {
-	"Vigemus/iron.nvim",
-	ft = { "python" },
-	config = function()
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "python",
+	callback = function()
+		vim.pack.add({
+			"https://github.com/Vigemus/iron.nvim",
+		})
 		local iron = require("iron.core")
 		local view = require("iron.view")
 		local common = require("iron.fts.common")
@@ -32,20 +34,19 @@ return {
 									has_matplotlib = result:match("True") ~= nil
 								end
 
-
 								-- The --no-autoindent is VERY important
-								local config =  {
+								local config = {
 									"ipython",
 									"--no-autoindent",
 									"--no-confirm-exit",
 								}
 
-                -- For matplotlib
-                if has_matplotlib then
-                  table.insert(config, "--matplotlib")
-                end
+								-- For matplotlib
+								if has_matplotlib then
+									table.insert(config, "--matplotlib")
+								end
 
-                return config
+								return config
 							else
 								return { "python3" }
 							end
@@ -118,4 +119,4 @@ return {
 			vim.api.nvim_win_set_cursor(0, { current_line, 0 })
 		end, { desc = "Insert #%% above" })
 	end,
-}
+})

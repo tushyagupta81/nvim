@@ -1,12 +1,11 @@
----@diagnostic disable: missing-fields
-return {
-	"mfussenegger/nvim-dap",
-	event = { "BufReadPre", "BufNewFile" },
-	dependencies = {
-		"theHamsta/nvim-dap-virtual-text",
-		"igorlfs/nvim-dap-view",
-	},
-	config = function()
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		vim.pack.add({
+			"https://github.com/mfussenegger/nvim-dap",
+			"https://github.com/theHamsta/nvim-dap-virtual-text",
+			"https://github.com/igorlfs/nvim-dap-view",
+		})
 		require("nvim-dap-virtual-text").setup({
 			enabled = true,
 			enabled_commands = true,
@@ -97,4 +96,4 @@ return {
 			end,
 		})
 	end,
-}
+})

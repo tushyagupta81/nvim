@@ -1,7 +1,9 @@
-return {
-	"stevearc/conform.nvim",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		vim.pack.add({
+			"https://github.com/stevearc/conform.nvim",
+		})
 		local conform = require("conform")
 
 		conform.setup({
@@ -38,4 +40,4 @@ return {
 			})
 		end, { desc = "Format file or range (in visual mode)" })
 	end,
-}
+})

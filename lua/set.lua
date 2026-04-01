@@ -41,3 +41,5 @@ vim.o.foldmethod = "expr"
 vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.o.foldtext = ""
 vim.opt.foldcolumn = "0"
+
+vim.cmd("packadd nvim.undotree")

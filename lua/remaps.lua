@@ -53,7 +53,7 @@ vim.keymap.set("ca", "Wqa", "wqa")
 vim.keymap.set("ca", "WQa", "wqa")
 vim.keymap.set("ca", "Vs", "vs")
 
-require("plugins.utils.logger")
+-- require("plugin.utils.logger")
 
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action)
 
@@ -61,3 +61,5 @@ vim.keymap.set("n", "gy", "yypkgccj", { remap = true })
 vim.keymap.set("v", "gy", "y`>pkgvgc", { remap = true })
 
 vim.keymap.set("i", "<C-l>", "<Esc>A;", { remap = true })
+
+vim.keymap.set("n", "<leader>u", require("undotree").open, { desc = "Open undotree" })

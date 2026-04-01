@@ -1,7 +1,9 @@
-return {
-	"mfussenegger/nvim-lint",
-	event = { "BufReadPre", "BufNewFile" },
-	config = function()
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		vim.pack.add({
+			"https://github.com/mfussenegger/nvim-lint",
+		})
 		local lint = require("lint")
 
 		lint.linters_by_ft = {
@@ -28,4 +30,4 @@ return {
 			lint.try_lint()
 		end, { desc = "Trigger linting for current file" })
 	end,
-}
+})
