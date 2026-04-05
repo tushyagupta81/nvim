@@ -6,13 +6,16 @@ vim.api.nvim_create_autocmd("PackChanged", {
 		end
 	end,
 })
+
+vim.schedule(function ()
+  vim.pack.add({
+    "https://github.com/iamcco/markdown-preview.nvim",
+  })
+end)
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
-    print("Hello")
-		vim.pack.add({
-			"https://github.com/iamcco/markdown-preview.nvim",
-		})
+		print("Hello")
 		vim.keymap.set("n", "<leader>pre", "<cmd>MarkdownPreview<CR>", { desc = "Enable markdown preview" })
 	end,
 })

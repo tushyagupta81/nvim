@@ -11,12 +11,17 @@ local lsp_configs = {
 	"rust-analyzer",
 	-- "tailwindcss-language-server",
 	-- "typescript-language-server",
-	"astro-ls",
+	-- "astro-ls",
 	-- "zls",
-	"neocmakelsp",
+	-- "neocmakelsp",
 }
 
-vim.lsp.enable(lsp_configs)
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	once = true,
+	callback = function()
+		vim.lsp.enable(lsp_configs)
+	end,
+})
 
 vim.diagnostic.config({
 	virtual_text = { current_line = false },
