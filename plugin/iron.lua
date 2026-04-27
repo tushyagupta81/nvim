@@ -1,11 +1,9 @@
-vim.schedule(function ()
-  vim.pack.add({
-    "https://github.com/Vigemus/iron.nvim",
-  })
-end)
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "python",
 	callback = function()
+    vim.pack.add({
+      "https://github.com/Vigemus/iron.nvim",
+    })
 		local iron = require("iron.core")
 		local view = require("iron.view")
 		local common = require("iron.fts.common")
