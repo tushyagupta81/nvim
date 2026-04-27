@@ -1,4 +1,5 @@
 require("set")
+require("commands")
 require("remaps")
 require("lsp")
 require("statusline")
