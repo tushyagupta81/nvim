@@ -63,7 +63,7 @@ require("tokyonight").setup({
 		sidebars = "transparent",
 		floats = "transparent",
 	},
-	dim_inactive = false,
+	dim_inactive = true,
 	cache = true,
 })
 ColorMyPencils("tokyonight-night")
@@ -83,22 +83,14 @@ ColorMyPencils("tokyonight-night")
 -- 			-- vim.cmd.colorscheme("catppuccin-frappe")
 -- 		end,
 -- 	},
--- 	{
--- 		"scottmckendry/cyberdream.nvim",
--- 		enabled = false,
--- 		lazy = false,
--- 		priority = 1000,
--- 		config = function()
--- 			require("cyberdream").setup({
--- 				-- Enable transparent background
--- 				transparent = true,
--- 				borderless_telescope = false,
--- 				cache = false,
--- 			})
--- 			-- ColorMyPencils()
--- 			-- vim.cmd("colorscheme cyberdream")
--- 		end,
--- 	},
+-- vim.pack.add({ "https://github.com/scottmckendry/cyberdream.nvim" })
+-- require("cyberdream").setup({
+-- 	-- Enable transparent background
+-- 	transparent = false,
+--   saturation = 0.8,
+-- 	cache = true,
+-- })
+-- ColorMyPencils("cyberdream")
 -- 	{
 -- 		"diegoulloao/neofusion.nvim",
 -- 		enabled = false,
@@ -112,3 +104,18 @@ ColorMyPencils("tokyonight-night")
 -- 		end,
 -- 	},
 -- }
+-- vim.pack.add({ "https://github.com/MiladGGG/neonwave.nvim" })
+-- require("neonwave").setup({
+--   intensity = "neon",
+--   background = "dark",
+--   transparent_background = true,
+-- })
+-- ColorMyPencils("neonwave")
+-- vim.pack.add({
+-- 	{
+-- 		src = "https://github.com/rose-pine/neovim",
+-- 		name = "rose-pine",
+-- 	},
+-- })
+-- require("rose-pine").setup()
+-- ColorMyPencils("rose-pine")

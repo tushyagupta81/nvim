@@ -6,6 +6,7 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 			"https://github.com/nvim-mini/mini.surround",
 			"https://github.com/nvim-mini/mini.cursorword",
 			"https://github.com/nvim-mini/mini.hipatterns",
+			"https://github.com/nvim-mini/mini.splitjoin",
 		})
 		local ai = require("mini.ai")
 		ai.setup({
@@ -62,6 +63,12 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 				},
 			},
 		})
+
+		require("mini.splitjoin").setup({
+			mappings = {
+				toggle = "gS",
+			},
+		})
 	end,
 })
 vim.pack.add({
@@ -72,7 +79,6 @@ require("mini.icons").setup()
 require("mini.files").setup({
 	mappings = {
 		close = "q",
-		go_in = "l",
 		go_in_plus = "<CR>",
 		go_out = "h",
 		go_out_plus = "H",
