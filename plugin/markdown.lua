@@ -12,10 +12,12 @@ vim.schedule(function ()
     "https://github.com/iamcco/markdown-preview.nvim",
   })
 end)
+
+-- Use this command to install markdown preview binary
+-- :call mkdp#util#install()
 vim.api.nvim_create_autocmd("FileType", {
 	pattern = "markdown",
 	callback = function()
-		print("Hello")
 		vim.keymap.set("n", "<leader>pre", "<cmd>MarkdownPreview<CR>", { desc = "Enable markdown preview" })
 	end,
 })

@@ -41,10 +41,11 @@ vim.schedule(function()
 			-- "eslint", -- javascript
 			"basedpyright", -- python
 			"bash-language-server", -- bash
-			"tailwindcss-language-server", -- tailwind
+			-- "tailwindcss-language-server", -- tailwind
 			"zls", -- zig
 			"clangd", -- cpp
 			"xmlformatter", -- formatter for xml
+      "asm-lsp",
 
 			-- Debug adapters
 			"codelldb", -- c c++ rust zig

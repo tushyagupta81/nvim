@@ -7,6 +7,18 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 		local conform = require("conform")
 
 		conform.setup({
+			formatters = {
+				djlint = {
+					args = {
+						"--reformat",
+						"--profile=django",
+						"--stdin-filename",
+						"$FILENAME",
+						"-",
+					},
+					stdin = true,
+				},
+			},
 			formatters_by_ft = {
 				javascript = { "biome" },
 				typescript = { "biome" },
@@ -16,6 +28,7 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 				json = { "biome" },
 				css = { "prettierd" },
 				html = { "prettierd" },
+				htmldjango = { "djlint" },
 				yaml = { "prettierd" },
 				lua = { "stylua" },
 				rust = { "rustfmt" },
@@ -30,6 +43,12 @@ vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 			-- 	async = false,
 			-- 	timeout_ms = 1000,
 			-- },
+		})
+
+		vim.filetype.add({
+			pattern = {
+				[".*/templates/.*%.html"] = "htmldjango",
+			},
 		})
 
 		vim.keymap.set({ "n", "v" }, "<leader>gf", function()
